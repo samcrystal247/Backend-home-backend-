@@ -3,12 +3,17 @@ const express = require("express");
 // import express from "express";
 const dotenv = require("dotenv").config();
 const App = express();
+const bodyParser = require("body-parser");
+
+const cors = require("cors");
 
 const PORT = process.env.PORT;
-const taskRoutes = require("./routes/Task");
+const taskRoutes = require("./routes/Task.js");
 const colors = require("colors");
 const connectDB = require("./config/db");
 connectDB();
+App.use(bodyParser.json());
+App.use(cors());
 App.use("/Task", taskRoutes);
 App.get("/find", (request, response) => {
   const people = [

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const TaskSchema = mongoose.Schema(
   {
-    projectTittle: {
+    projectTitle: {
       type: String,
       required: true,
     },
@@ -13,7 +13,7 @@ const TaskSchema = mongoose.Schema(
       maxlenght: 100,
     },
 
-    Assign_To: {
+    assignedTo: {
       type: String,
       required: [true, "input field required"],
       unique: true,
@@ -28,7 +28,7 @@ const TaskSchema = mongoose.Schema(
       type: Date,
       required: true,
     },
-    EndDate: {
+    endDate: {
       type: Date,
       required: true,
     },
@@ -52,4 +52,4 @@ const TaskSchema = mongoose.Schema(
     timestamp: true,
   }
 );
-module.exports = mongoose.models("Task", TaskSchema);
+module.exports = mongoose.model("Task", TaskSchema);

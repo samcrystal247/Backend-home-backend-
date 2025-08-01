@@ -1,14 +1,20 @@
 const express = require("express");
-const { createTask, GetAllTask, AllTask } = require("../controler/Task2");
+const {
+  CreateTask,
+  GetAllTask,
+  GetSingleTask,
+  DeleteSingleTask,
+  UpdateSingleTask,
+} = require("../controler/Task2");
 
 const router = express.Router();
 
-router.get("/", (response, request) => {
-  response.json({ message: "i love my country" });
-});
-router.post("/", createTask);
+router.post("/", CreateTask);
 
-router.put("/", GetAllTask);
-router.delete("/", AllTask);
+router.get("/", GetAllTask);
+
+router.get("/:id", GetSingleTask);
+router.get("/:id", DeleteSingleTask);
+router.put("/:id", UpdateSingleTask);
 
 module.exports = router;
