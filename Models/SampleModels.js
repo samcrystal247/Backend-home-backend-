@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
-const Taskschema = mongoose.Schema(
+const Sampleschema = mongoose.Schema(
   {
+    ////project title is an example of data field
+    // and you can add other data fields
+    projectTitle: {
+      type: String,
+      required: true,
+    },
     firstName: {
       type: String,
       required: false,
@@ -30,4 +36,4 @@ const Taskschema = mongoose.Schema(
   }
 );
 
-module.exports = ("Task", Taskschema);
+module.exports = ("Sample", Sampleschema);

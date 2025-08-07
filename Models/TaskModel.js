@@ -16,7 +16,7 @@ const TaskSchema = mongoose.Schema(
     assignedTo: {
       type: String,
       required: [true, "input field required"],
-      unique: true,
+      value: true,
     },
 
     projectlink: {

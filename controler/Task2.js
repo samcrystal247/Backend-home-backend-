@@ -93,7 +93,7 @@ const UpdateSingleTask = async (req, res) => {
       return res.status(406).json({ message: "Task id not found" });
     } else {
       task.projectTitle = projectTitle || task.projectTitle;
-
+      task.description = description || task.description;
       task.assignedTo = assignedTo || task.assignedTo;
       task.startDate = startDate || task.startDate;
       task.endDate = endDate || task.endDate;
